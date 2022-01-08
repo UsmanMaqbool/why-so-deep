@@ -1,9 +1,10 @@
-# Why-So-Deep
 
 
 * MAQBOOL Working fine
 * MAQBOOL -2 UPDATED - NEED TO FIX
 
+
+# Why-So-Deep
 
 <h1 align="center">
   <p align="center">MAQBOOL</p>
@@ -18,12 +19,31 @@
   <a href="#license"><img src="https://img.shields.io/github/license/sourcerer-io/hall-of-fame.svg?colorB=ff0000"></a>
 </p>
 
-Documentation is available at [project website](https://usmanmaqbool.github.io/why-so-deep). Please follow the [installation](#installation) guide below.
+Documentation is available at . Please follow the [installation](docs/INSTALL.md).
 
-Test
+#### Official implementation:
+* [Why-So-Deep](https://usmanmaqbool.github.io/why-so-deep): Towards Boosting Previously Trained Models for Visual Place Recognition (RA-L/ICRA 2022) [[paper]](#) [[project website](https://usmanmaqbool.github.io/why-so-deep)]
+
+## Installation
+
+Please refer to [INSTALL.md](docs/INSTALL.md) for installation and dataset preparation.
+
+## Train & Test
+
+To reproduce the results in papers, you could train and test the models following the instruction in [REPRODUCTION.md](docs/REPRODUCTION.md).
+
+## Model Zoo
+
+Please refer to [MODEL_ZOO.md](docs/MODEL_ZOO.md) for trained models.
+
+
+
 ## Prerequisite
 
-* Firstly make sure, you have followed [installation](#installation) guide and downloaded [datasets and pre-trained models](#dataset-and-pre-trained-models). 
+* Firstly make sure, you have followed [installation](/home/leo/usman_ws/why-so-deep/docs/INSTALL.md) guide.
+* 
+* 
+* and downloaded [datasets and pre-trained models](#dataset-and-pre-trained-models). 
 * Set correct paths in `localpaths.m` 
   - `datasets_directory` (Main directory of all the datasets).
   - `paths.m_directory`  (Pre-computed MAQBOOL data). Create a directory structure shown below.
@@ -55,3 +75,23 @@ Please download pre-trained models and datasets (Pittsburgh, Tokyo247 and ToykoT
 
 We have used `VGG-16 + NetVLAD + whitening` related models only as it has top NetVLAD performance.
 
+## License
+
+`Why-So-Deep` is released under the [MIT license](LICENSE).
+
+
+## Citation
+
+If you find this repo useful for your research, please consider citing the paper
+```
+@inproceedings{WhySoDeepBhutta22,
+    author={Bhutta, M. Usman Maqbool and Sun, Yuxiang and Lau, Darwin and Liu, Ming},
+    title={Why-So-Deep: Towards Boosting Previously Trained Models for Visual Place Recognition},
+    booktitle={European Conference on Computer Vision}
+    year={2020},
+}
+```
+
+## Acknowledgements
+
+The structure of this repo is inspired by [NetVLAD](https://github.com/Relja/netvlad).
