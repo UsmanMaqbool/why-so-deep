@@ -19,10 +19,10 @@ function m_opts= run_config(paths)
     % net_dataset = 'tokyoTM'; test_on = 'tokyo247'; f_dimension = 512;
 
     % % Tokyo 24/7 at 4096-D
-    %net_dataset = 'tokyoTM'; test_on = 'tokyo247'; f_dimension = 4096; 
+    net_dataset = 'tokyoTM'; test_on = 'tokyo247'; f_dimension = 4096; 
 
     % % Pitts on Tokyo 24/7 at 512-D
-    net_dataset = 'pitts30k';  test_on = 'tokyo247'; f_dimension = 512; 
+    % net_dataset = 'pitts30k';  test_on = 'tokyo247'; f_dimension = 512; 
     
     % % Pitts on Tokyo 24/7 at 4096-D
     %net_dataset = 'pitts30k'; test_on = 'tokyo247'; f_dimension = 4096; 
