@@ -161,30 +161,30 @@ function [res, recalls, allrecalls_m]= m_recallAtN(searcher, nQueries, isPos, ns
                d_c_j = d_c(j,1); 
           if ~data_post_computed_exist 
                %Single File Load
-               C_j_nn = x_q_feat.ds_all_file(j).ds_all_full; %51*50         first match ka box
+               C_j_nn_pre = x_q_feat.ds_all_file(j).ds_all_full; %51*50         first match ka box
                x_q_feat_box_q =  x_q_feat.q_bbox;                       %51*5
                x_q_feat_box_db = x_q_feat.db_bbox_file(j).bboxdb;       % 51*5
 
 
-               C_j_nn_exp = exp(-1.*C_j_nn); % jj first match
+               C_j_nn_exp = exp(-1.*C_j_nn_pre); % jj first match
 
                % excluding the top
 
-               C_n_n = C_j_nn(2:end,:);  
+               C_n_n = C_j_nn_pre(2:end,:);  
                [C_n_n_sort C_n_n_sort_index] = sort(C_n_n);
 
                 diff2_C_n_n = diff(diff(C_n_n));
                 diff2_C_j_f = diff2_C_n_n;
 
 
-                C_j_f = C_j_nn-max(d_c(:));  % d_c^max
+                C_j_f = C_j_nn_pre-max(d_c(:));  % d_c^max
 
                 s=sign(C_j_f); 
 
                 inegatif=sum(s(:)==-1);
 
                 D_j = s; D_j(D_j>0) = 0; 
-                C_j_nn = abs(D_j).*C_j_nn; 
+                C_j_nn = abs(D_j).*C_j_nn_pre; 
 
 
                 
@@ -271,7 +271,7 @@ function [res, recalls, allrecalls_m]= m_recallAtN(searcher, nQueries, isPos, ns
 
                 crf_M_j = P_j_SM*P_j_SC;
 
-                crf_C_qc = [current_diff C_j_nn(1,1:Top_boxes)]; 
+                crf_C_qc = [current_diff C_j_nn_pre(1,1:Top_boxes)]; 
            end
            if ~(m_config.create_Model)
                
@@ -322,7 +322,7 @@ function [res, recalls, allrecalls_m]= m_recallAtN(searcher, nQueries, isPos, ns
                assert(numReturned<=nTop); % if your searcher returns fewer, it's your fault
                
 
-                    gt_top = isPos(iTest, ids_new);
+                    gt_top = logical(isPos(iTest, ids_new));
                     thisRecall= cumsum( isPos(iTest, ids_new) ) > 0; % yahan se get karta hai %db.cp (close position)    
     
                
