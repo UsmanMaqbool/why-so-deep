@@ -389,7 +389,7 @@ function [res, recalls, allrecalls_m]= m_recallAtN(searcher, nQueries, isPos, ns
         if iTestSample == m_limit && m_config.create_Model
             break;
         end
-        if ~data_post_computed_exist && ~(m_config.create_Model)
+        if ~data_post_computed_exist
 
             % check folder
             check_folder = fileparts(data_post_computed);
@@ -399,6 +399,17 @@ function [res, recalls, allrecalls_m]= m_recallAtN(searcher, nQueries, isPos, ns
             save(data_post_computed,'P_M_j');
             P_M_j = [];
         end
+        
+        if ~data_post_computed_exist
+        % check folder
+            check_folder = fileparts(data_post_computed);
+            if ~exist(check_folder, 'dir')
+                mkdir(check_folder)
+            end
+            save(data_post_computed,'P_M_j');
+            P_M_j = [];
+        end
+        
     end
     
     
