@@ -61,7 +61,7 @@ dbFeatFn = sprintf('%s%s_%s_db.bin', paths.outPrefix, netID, dbTest.name);  % ju
 
 % Create models if not available
 if ~exist(qFeatFn, 'file')
-    %if you dont want to compute, you can download from NETVLAD's project page.
+    %if you dont want PhDto compute, you can download from NETVLAD's project page.
     print_level_wsd(qFeatFn,2); % Download pre-computed files
     
     net= relja_simplenn_tidy(net); % potentially upgrate the network to the latest version of NetVLAD / MatConvNet
