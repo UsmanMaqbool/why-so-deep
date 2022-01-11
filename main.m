@@ -54,7 +54,7 @@ load( sprintf('%s%s.mat', paths.ourCNNs, netID), 'net' );
 end
 
 %% Whole Process
-dbTest = m_config.dbTest;
+ dbTest = m_config.dbTest;
 qFeatFn = sprintf('%s%s_%s_q.bin', paths.outPrefix, netID, dbTest.name);   % just to create the files in the out folder
 dbFeatFn = sprintf('%s%s_%s_db.bin', paths.outPrefix, netID, dbTest.name);  % just to create the files in the out folder
 

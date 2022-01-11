@@ -46,8 +46,8 @@ function [res, recalls, allrecalls_m]= m_recallAtN(searcher, nQueries, isPos, ns
     % set up opts for edgeBoxes (see edgeBoxes.m)
    
     num_box = 50; % Total = 10 (first one is the full images feature / box)
-    Top_boxes = 10; % will be used.
-    total_top = 100; %100;0
+    Top_boxes = 10; %
+    total_top = 100; %
     P_M_j = [];
     
     
@@ -89,12 +89,9 @@ function [res, recalls, allrecalls_m]= m_recallAtN(searcher, nQueries, isPos, ns
         end
             iTest= toTest(iTestSample);
             [ids, d_c]= searcher(iTest, nTop); % Main function to find top 100 candidaes
-            
-           % [ids, ~]= yael_nn(db.qImageFns, db.qImageFns(:,iTest), size(db.qImageFns, 2));
-            ds = d_c - min(d_c(:));
+                        ds = d_c - min(d_c(:));
 
          
-            % if oxford or otherplace datasets, we can get the recall like this
             if(m_config.create_Model)
                 %working for TokyoTM    
                 gt_top = logical(isPos(iTest, ids));
@@ -147,8 +144,6 @@ function [res, recalls, allrecalls_m]= m_recallAtN(searcher, nQueries, isPos, ns
             C_j_nn = [];
             min_d_c_all = [];
 
-            % figure;
-
             for i=startfrom:total_top   
                 x_q_feat_ds= x_q_feat.ds_all_file(i).ds_all_full; % 51x50
                 C_j_nn = [C_j_nn ;x_q_feat_ds];  % 5100 x 50
@@ -167,35 +162,15 @@ function [res, recalls, allrecalls_m]= m_recallAtN(searcher, nQueries, isPos, ns
                x_q_feat_box_q =  x_q_feat.q_bbox;                       %51*5
                x_q_feat_box_db = x_q_feat.db_bbox_file(j).bboxdb;       % 51*5
 
-
-             %  C_j_nn_exp = exp(-1.*C_j_nn_pre); % jj first match
-
-               % excluding the top
-
                 C_n_n = C_j_nn_pre(2:end,:);  
                [C_n_n_sort C_n_n_sort_index] = sort(C_n_n);
-
-             %   diff2_C_n_n = diff(diff(C_n_n));
-             %   diff2_C_j_f = diff2_C_n_n;
-
-
                 C_j_f = C_j_nn_pre-max(d_c(:));  % d_c^max
-
                 s=sign(C_j_f); 
-
-              %  inegatif=sum(s(:)==-1);
-
                 D_j = s; D_j(D_j>0) = 0; 
-                C_j_nn = abs(D_j).*C_j_nn_pre; 
-
-
-                
+                C_j_nn = abs(D_j).*C_j_nn_pre;                 
                 current_diff = d_c_diff(j,1); 
-                exp_R = exp(-1.*d_c_diff(j,1)); %*exp_c_xy_j;
-
+                exp_R = exp(-1.*d_c_diff(j,1)); 
                [row,col] = size(C_j_nn);    
-
-               %box_var_db = [];
 
                for iii = 1: col
                     for jjj = 1:row 
@@ -203,10 +178,7 @@ function [res, recalls, allrecalls_m]= m_recallAtN(searcher, nQueries, isPos, ns
                         %Query -> Row and DB -> DB1 DB2 DB3 DB4 DB5 DB6 DB7
                         %DB8
                         %
-
-
                         c_xy_j = C_j_nn(jjj,iii);   % 51X51
-
 
                         related_Box_db = iii;
                         related_Box_q = jjj;
@@ -223,16 +195,12 @@ function [res, recalls, allrecalls_m]= m_recallAtN(searcher, nQueries, isPos, ns
                         exp_P_b_q = exp(-1.*(1-q_width_height));
                         exp_P_b_c = exp(-1.*(1-db_width_height));
 
-
                         d_xy_j = d_c(1,1)+c_xy_j;
                         exp_d_xy_j = exp(-1.*d_xy_j);  
 
                         S_XY(related_Box_q,related_Box_db) = 10*exp_R*exp_d_xy_j*exp_P_b_q*exp_P_b_c;
-
                     end
                end
-
-
                S_XY_sorted = zeros(num_box,num_box);
                C_j_nn_Nr_sorted = zeros(num_box,num_box);
 
@@ -296,10 +264,6 @@ function [res, recalls, allrecalls_m]= m_recallAtN(searcher, nQueries, isPos, ns
                ds_new_top(j,1) = d_c_j; 
                ds_new_top(j,2) =  abs(d_c_j-m_alpha*log(P_M_j_50));   
                ds_new_top(j,3) =  abs(d_c_j-m_alpha*log(P_M_j_100));   
-       
-                 
-             %  m_table = [];
-              % C_n_n = [];
            else
                  crf_y = int8(gt_top(j,1))+1;    
                  crf_data = struct ('Y', crf_y,'H', crf_C_qc,'X', crf_M_j, 'pre', d_c_j); 
@@ -318,17 +282,11 @@ function [res, recalls, allrecalls_m]= m_recallAtN(searcher, nQueries, isPos, ns
                 for l=1:total_top
                     ids_new(l,1) = ids(c_i(l,1));
                 end
-            
-
                numReturned= length(ids);
                assert(numReturned<=nTop); % if your searcher returns fewer, it's your fault
-               
-
-                    gt_top = logical(isPos(iTest, ids_new));
-                    thisRecall= cumsum( isPos(iTest, ids_new) ) > 0; % yahan se get karta hai %db.cp (close position)    
-    
-               
-               
+               gt_top = logical(isPos(iTest, ids_new));
+               thisRecall= cumsum( isPos(iTest, ids_new) ) > 0; % yahan se get karta hai %db.cp (close position)    
+      
                if k == 1
                     recalls(iTestSample, :)= thisRecall( min(ns, numReturned) );
                else
@@ -450,12 +408,4 @@ function [mat_boxes,im, edge_image, hyt, wyd] = img_Bbox(db_img,model)
     end
 
     mat_boxes = uint8(bboxes); 
-end
-
-function img = draw_boxx(I,bb)
-
-    %img = insertShape(I,'Rectangle',bb,'LineWidth',3);
-    %drawRectangle(image, Xmin, Ymin, width, height)
-    img = drawRectangle(I, bb(2), bb(1), bb(4), bb(3));
-
 end
