@@ -13,7 +13,7 @@
 </p>
 
 #### Official implementation:
-* [Why-So-Deep](https://usmanmaqbool.github.io/why-so-deep): Towards Boosting Previously Trained Models for Visual Place Recognition (RA-L/ICRA 2022) [[paper]](#) [[project website](https://usmanmaqbool.github.io/why-so-deep)]
+* [Why-So-Deep](https://usmanmaqbool.github.io/why-so-deep): Towards Boosting Previously Trained Models for Visual Place Recognition (RA-L/ICRA 2022) [[paper]](https://arxiv.org/abs/2201.03212) [[project website](https://usmanmaqbool.github.io/why-so-deep)]
 
 ##### Source Code
 > Source Code will be uploaded soon, meanwhile you can use our results.
@@ -29,7 +29,7 @@ If you find this repo useful for your research, please consider citing the paper
 @article{whysodeepBhutta22,
 	title={Why-So-Deep: Towards Boosting Previously Trained Models for Visual Place Recognition}, 	
 	author={M. Usman Maqbool Bhutta and Yuxiang Sun and Darwin Lau and Ming Liu},	
-    	year={2022},
+    year={2022},
 	eprint={2201.03212},
 	archivePrefix={arXiv},
 	primaryClass={cs.CV}
