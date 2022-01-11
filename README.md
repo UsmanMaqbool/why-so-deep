@@ -25,11 +25,13 @@ Furthermore, if you need help in plotting the results using Tikz and latex, plea
 ## Citation
 
 If you find this repo useful for your research, please consider citing the paper
-```
-@inproceedings{WhySoDeepBhutta22,
-    author={Bhutta, M. Usman Maqbool and Sun, Yuxiang and Lau, Darwin and Liu, Ming},
-    title={Why-So-Deep: Towards Boosting Previously Trained Models for Visual Place Recognition},
-    booktitle={European Conference on Computer Vision}
-    year={2020},
+```bib
+@article{whysodeepBhutta22,
+	title={Why-So-Deep: Towards Boosting Previously Trained Models for Visual Place Recognition}, 	
+	author={M. Usman Maqbool Bhutta and Yuxiang Sun and Darwin Lau and Ming Liu},	
+    year={2022},
+	eprint={2201.03212},
+	archivePrefix={arXiv},
+	primaryClass={cs.CV}
 }
 ```
