@@ -29,8 +29,9 @@ If you find this repo useful for your research, please consider citing the paper
 @article{whysodeepBhutta22,
 	title={Why-So-Deep: Towards Boosting Previously Trained Models for Visual Place Recognition}, 	
 	author={M. Usman Maqbool Bhutta and Yuxiang Sun and Darwin Lau and Ming Liu},
-	year={2022},
+    year={2022},
 	eprint={2201.03212},
+    doi={10.1109/LRA.2022.3142741},
 	archivePrefix={arXiv},
 	primaryClass={cs.CV}
 }
