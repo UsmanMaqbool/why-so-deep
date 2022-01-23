@@ -27,7 +27,7 @@ Furthermore, if you need help in plotting the results using Tikz and latex, plea
 If you find this repo useful for your research, please consider citing the paper
 ```bib
 @article{whysodeepBhutta22,
-	 author={Bhutta, M. Usman Maqbool and Sun, Yuxiang and Lau, Darwin and Liu, Ming},
+  author={Bhutta, M. Usman Maqbool and Sun, Yuxiang and Lau, Darwin and Liu, Ming},
   journal={IEEE Robotics and Automation Letters}, 
   title={Why-So-Deep: Towards Boosting Previously Trained Models for Visual Place Recognition}, 
   year={2022},
