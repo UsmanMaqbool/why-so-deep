@@ -1,14 +1,16 @@
 # Why-So-Deep
 
 <h1 align="center">
-  <p align="center">MAQBOOL</p>
-  <a href="https://usmanmaqbool.github.io/why-so-deep"><img src="https://usmanmaqbool.github.io/assets/images/maqbool/maqbool.png" alt="why-so-deep" style="height: 124px;"></a>
-  
+  <img src="https://usmanmaqbool.github.io/assets/images/publication/covers-why-so-deep-github.jpg" alt="why-so-deep">  
 </h1>
-<p align="center">Multiple AcuQitation of perceptiBle regiOns for priOr Learning </p>
 
 #### Official implementation:
-* [Why-So-Deep](https://usmanmaqbool.github.io/why-so-deep): Towards Boosting Previously Trained Models for Visual Place Recognition (RA-L 2022) [[Arxiv]](https://arxiv.org/abs/2201.03212) [[project website](https://usmanmaqbool.github.io/why-so-deep)] | [Bibtex](#citation)
+* [Why-So-Deep](https://usmanmaqbool.github.io/why-so-deep): Towards Boosting Previously Trained Models for Visual Place Recognition (RA-L 2022) [[Arxiv]](https://arxiv.org/abs/2201.03212) | [[project website]](https://usmanmaqbool.github.io/why-so-deep) | [[Bibtex]](#citation)
+  * Method (Ours): **MAQBOOL**: Multiple AcuQitation of perceptiBle regiOns for priOr Learning 
+
+<p align="center">
+  <img src="https://usmanmaqbool.github.io/assets/images/maqbool/maqbool.png" alt="why-so-deep" style="height: 94px;">
+</p>
 
 #### Installation
 
@@ -163,7 +165,7 @@ Documentation is available at [project website](https://usmanmaqbool.github.io/w
 `Why-So-Deep` is released under the [MIT license](LICENSE).
 
 <p align="center">
-  ⭐️ If you like MAQBOOL, give it a star on GitHub! ⭐️
+  ⭐️ If you like Why-So-Deep, give it a star here! ⭐️
   <br>
   <a href="https://twitter.com/MUsmanMBhutta"><img src="https://img.shields.io/twitter/follow/MUsmanMBhutta.svg?style=social" alt="Twitter Follow" /></a>
   <a href="#license"><img src="https://img.shields.io/github/license/sourcerer-io/hall-of-fame.svg?colorB=ff0000"></a>
