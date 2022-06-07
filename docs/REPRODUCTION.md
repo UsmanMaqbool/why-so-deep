@@ -11,7 +11,7 @@
         ├── models
         ├── post_computed_files #fast verify results
         └── pre_computed_files  #fast results
-    On our [project page](https://usmanmaqbool.github.io/why-so-deep/#precomputed-files), you can download `pre_computed` and `post_computed` files. If you just want to test the results.
+    On our project page, you can [download](https://usmanmaqbool.github.io/why-so-deep#precomputed-files) `pre_computed` and `post_computed` files. If you just want to test the results.
 
  * **Dataset and Pre-trained Models**
     - Please download pre-trained models and datasets (Pittsburgh, Tokyo247 and ToykoTM) from [NetVLAD project website](https://www.di.ens.fr/willow/research/netvlad/). 
@@ -25,9 +25,9 @@
 * To run the main file, open MATLAB and run `run main_wsd.m`. 
 
 #### Training MAQBOOL Layer
-MAQBOOL PDL layer is Trained using TOKYOTM dataset. First 250 test samples are taken. 
+MAQBOOL PDL layer is trained using TOKYOTM dataset. First 250 test samples are taken. 
 
-If you didn't download/use from our project page, it will start train and create a model based on first 250 samples of TOKYOTM datasets.
+If you didn't download/use from our project page, it will start train and create a model based on first 250 samples of TOKYOTM dataset.
 
 #### Testing on different datasets
 
