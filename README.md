@@ -2,7 +2,7 @@
 
 <h1 align="center">
   <p align="center">MAQBOOL</p>
-  <a href="https://usmanmaqbool.github.io/why-so-deep"><img src="https://usmanmaqbool.github.io/assets/images/maqbool/maqbool.png" alt="why-so-deep" style="height: 164px;"></a>
+  <a href="https://usmanmaqbool.github.io/why-so-deep"><img src="https://usmanmaqbool.github.io/assets/images/maqbool/maqbool.png" alt="why-so-deep" style="height: 124px;"></a>
   
 </h1>
 <p align="center">Multiple AcuQitation of perceptiBle regiOns for priOr Learning </p>
@@ -27,6 +27,7 @@ Please refer to [INSTALL.md](docs/INSTALL.md) for installation and dataset prepa
 To reproduce the results in papers, you could train and test the models following the instruction in [REPRODUCTION.md](docs/REPRODUCTION.md).
 #### Results
 
+**MAQBOOL performance comparison with APANet and NetVLAD at 512-D.**
 
 <table cellspacing="0" border="0">
 	<colgroup width="118"></colgroup>
@@ -133,9 +134,14 @@ If you want to add MAQBOOL results, tested on Pittsburgh and Tokyo247 dataset, i
 Names of these `dat` files are explained in our [project page](https://usmanmaqbool.github.io/why-so-deep), so that you can easily use. 
 Furthermore, if you need help in plotting the results using Tikz and latex, please follow this [little tutorial](https://usmanmaqbool.github.io/how-to-add-tikz-graphs-in-latex/).
 
-#### License
 
-`Why-So-Deep` is released under the [MIT license](LICENSE).
+##### Generate Thumbnails 
+
+Thumbnails generating for top 5 results
+
+Open `config_wsd.m` and change `show_output = 1`. 
+
+
 
 
 #### Citation
@@ -159,3 +165,7 @@ The structure of this repo is inspired by [NetVLAD](https://github.com/Relja/net
 
 
 Documentation is available at [project website](https://usmanmaqbool.github.io/why-so-deep). Please follow the [installation](#installation) guide below.
+
+#### License
+
+`Why-So-Deep` is released under the [MIT license](LICENSE).
